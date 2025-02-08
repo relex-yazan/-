@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نبض التصميم</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header id="header">
+            <h1>نبض التصميم</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- قسم الرئيسية -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>مرحبًا بكم في نبض التصميم</h2>
+            <p>نحن نخلق تصاميم إبداعية تلهم وتحقق النتائج.</p>
+            <a href="#services" class="cta-button">اكتشف خدماتنا</a>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section id="services" class="services">
+        <h2>خدماتنا</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <div class="icon">🎨</div>
+                <h3>تصميم الويب</h3>
+                <p>تصميم مواقع حديثة وجذابة.</p>
+            </div>
+            <div class="service-item">          
+            </div>
+            <div class="service-item">
+                <div class="icon">📱</div>
+                <h3>تطوير التطبيقات</h3>
+                <p>تطوير تطبيقات مخصصة لنشاطك التجاري.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- قسم من نحن -->
+    <section id="about" class="about">
+        <h2>من نحن</h2>
+        <p>نحن فريق من المصممين والمطورين المبدعين الذين يعملون معًا لإنشاء تجارب رقمية فريدة.</p>
+    </section>
+
+    <!-- قسم اتصل بنا -->
+    <section id="contact" class="contact">
+        <h2>اتصل بنا</h2>
+        <p>يمكنك التواصل معنا عبر الواتساب:</p>
+        <a href="https://wa.me/966534872696" class="whatsapp-link" target="_blank">0534872696</a>
+        <form>
+        </form>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <p>© 2023 نبض التصميم. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- JavaScript للحركات -->
+    <script>
+        // جعل الشريط العلوي ثابتًا عند التمرير
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // إضافة حركات للعناصر عند التمرير
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight - 100) {
+                    section.classList.add('fade-in');
+                }
+            });
+        });
+
+        // Smooth Scroll للروابط الداخلية
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
